@@ -64,17 +64,14 @@ function kilometersToMiles(kilometers) {
 //
 // TODO: write code below
 
-function makeSentence(string) { 
-  const puncation = ['.', '!', '?']
 
-  const sentence = string[0].toUpperCase() + string.substring(1) 
-  if (puncation.includes(string[string.length-1])) {
-    return sentence
-  }
-
-  return '${sentence}.'
-}
-
+function makeSentence (string) {
+    let capitalLetter = string.charAt(0).toUpperCase()
+    const lastCharacter = string.charAt(string.length-1)
+    if (lastCharacter !== '.' && lastCharacter !== '?' && lastCharacter !== '!') {
+     return capitalLetter + string.substring(1) + '.'
+    }
+    return capitalLetter + string.substring(1)} 
 
 
 // FileExtension
@@ -88,7 +85,16 @@ function makeSentence(string) {
 // with a reference to your function.
 //
 // TODO: write code below
+function fileExtension (string) {
+  
+  const dot = ['.']
+  let extension = string.substring(string.length-3)
 
+  if (string.includes(dot)){
+    return extension 
+  }
+  else return ''
+}
 
 
 // Range
@@ -101,6 +107,13 @@ function makeSentence(string) {
 // with a reference to your function.
 //
 // TODO: write code below
+function range (numbers) {
+  let highNumber = Math.max(numbers)
+  let lowNumber =  Math.min(numbers)
+  console.log(Math.max(numbers))
+  return (highNumber - lowNumber)
+  
+} 
 
 
 
@@ -159,8 +172,8 @@ module.exports = {
   f: range,
 
   //CheckTransactions
-  g: checkTransctions,
+  //g: checkTransctions,
 
   //FilmsInGenre
-  h: filmsInGenre,
+  //h: filmsInGenre,
 }
