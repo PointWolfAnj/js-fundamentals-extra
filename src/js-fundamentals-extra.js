@@ -8,6 +8,10 @@
 //
 // TODO: write code below
 
+//const secondsInHours = ( hours) =>  (hours * 3600) 
+function secondsInHours(hours) {
+  return hours * 3600
+}
 
 
 // MilesTravelled
@@ -22,7 +26,10 @@
 // with a reference to your function.
 //
 // TODO: write code below
-
+function milesTravelled (speed, minutes) {
+  const hoursTravelled = minutes/60
+  return Math.ceil(speed*hoursTravelled)
+} 
 
 
 // KilometersToMiles
@@ -37,7 +44,11 @@
 //
 // TODO: write code below
 
+function kilometersToMiles(kilometers) {
+  const miles = kilometers / 1.6
 
+  return Math.round(miles)
+}
 
 // MakeSentence
 //
@@ -52,6 +63,17 @@
 // with a reference to your function.
 //
 // TODO: write code below
+
+function makeSentence(string) { 
+  const puncation = ['.', '!', '?']
+
+  const sentence = string[0].toUpperCase() + string.substring(1) 
+  if (puncation.includes(string[string.length-1])) {
+    return sentence
+  }
+
+  return '${sentence}.'
+}
 
 
 
@@ -119,26 +141,26 @@
 // TODO: change undefined to be the name of the functions you defined
 module.exports = {
   //SecondsInHours
-  a: undefined,
+  a: secondsInHours,
 
   //MilesTravelled,
-  b: undefined,  
+  b: milesTravelled,  
 
   //KilometersToMiles,
-  c: undefined, 
+  c: kilometersToMiles, 
 
   //MakeSentence
-  d: undefined, 
+  d: makeSentence, 
 
   //FileExtension
-  e: undefined,
+  e: fileExtension,
 
   //Range
-  f: undefined,
+  f: range,
 
   //CheckTransactions
-  g: undefined,
+  g: checkTransctions,
 
   //FilmsInGenre
-  h: undefined,
+  h: filmsInGenre,
 }
