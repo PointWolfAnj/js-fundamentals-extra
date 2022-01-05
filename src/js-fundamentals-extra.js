@@ -108,9 +108,10 @@ function fileExtension (string) {
 //
 // TODO: write code below
 function range (numbers) {
-  let highNumber = Math.max(numbers)
-  let lowNumber =  Math.min(numbers)
-  console.log(Math.max(numbers))
+  let highNumber = Math.max(...numbers)
+  let lowNumber =  Math.min(...numbers)
+
+
   return (highNumber - lowNumber)
   
 } 
@@ -133,7 +134,7 @@ function range (numbers) {
 // with a reference to your function.
 //
 // TODO: write code below
-
+function checkTransactions ()
 
 
 // FilmsInGenre
@@ -172,7 +173,7 @@ module.exports = {
   f: range,
 
   //CheckTransactions
-  //g: checkTransctions,
+  g: checkTransctions,
 
   //FilmsInGenre
   //h: filmsInGenre,
